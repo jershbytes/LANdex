@@ -1,7 +1,10 @@
 {
   "name": "LANdex",
   "private": true,
-  "workspaces": ["client", "server"],
+  "workspaces": [
+    "client",
+    "server"
+  ],
   "scripts": {
     "start:server": "npm --prefix server start",
     "start:client": "npm --prefix client run dev",
@@ -11,5 +14,9 @@
   },
   "devDependencies": {
     "concurrently": "^8.2.2"
+  },
+  "dependencies": {
+    "dotenv": "^17.0.1",
+    "express": "^5.1.0"
   }
 }
