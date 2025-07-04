@@ -103,11 +103,13 @@ function AdminPage(props) {
     <div className="container">
       <div style={{display:'flex', justifyContent:'space-between', alignItems:'center'}}>
         <h1>LAN Server List (Admin)</h1>
-        <button className="logout-btn" onClick={handleLogout}>Logout</button>
       </div>
       {rest.error && <div className="error">{rest.error}</div>}
       <ServerList servers={rest.servers} admin={admin} handleDelete={rest.handleDelete} />
       <AddServerForm newServer={rest.newServer} setNewServer={rest.setNewServer} handleAdd={rest.handleAdd} />
+      <div style={{marginTop: '1rem', textAlign: 'right'}}>
+        <button className="logout-btn" onClick={handleLogout}>Logout</button>
+      </div>
     </div>
   );
 }
