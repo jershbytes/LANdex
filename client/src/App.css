@@ -1,0 +1,156 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* Monokai Spectrum inspired tweaks */
+body, .container {
+  background: #272822;
+  color: #f8f8f2;
+  font-family: 'Fira Mono', 'Consolas', 'Monaco', monospace;
+}
+.container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 8px;
+  background: #23241f;
+  box-shadow: 0 2px 16px #0008;
+}
+h1 {
+  color: #a6e22e;
+  text-align: center;
+}
+.server-list {
+  list-style: none;
+  padding: 0;
+}
+.server-list li {
+  background: #3e3d32;
+  margin: 0.5rem 0;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.server-list b {
+  color: #fd971f;
+}
+.server-list span {
+  color: #66d9ef;
+  margin-left: 1rem;
+}
+.delete-btn {
+  background: #f92672;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  padding: 0.3rem 0.7rem;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+.delete-btn:hover {
+  background: #fd285d;
+}
+.login-form, .add-form {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  background: #1a1a1a;
+  padding: 1.5rem;
+  border-radius: 6px;
+}
+input {
+  background: #272822;
+  color: #f8f8f2;
+  border: 1px solid #75715e;
+  border-radius: 3px;
+  padding: 0.5rem;
+}
+input:focus {
+  outline: 2px solid #a6e22e;
+}
+button[type="submit"] {
+  background: #a6e22e;
+  color: #23241f;
+  border: none;
+  border-radius: 3px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+button[type="submit"]:hover {
+  background: #b6f36e;
+}
+.error {
+  color: #f92672;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.copy-btn {
+  background: #66d9ef;
+  color: #23241f;
+  border: none;
+  border-radius: 3px;
+  padding: 0.3rem 0.7rem;
+  cursor: pointer;
+  margin-left: 1rem;
+  font-weight: bold;
+}
+.copy-btn:hover {
+  background: #a6e22e;
+  color: #23241f;
+}
+.logout-btn {
+  background: #f92672;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  padding: 0.4rem 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+.logout-btn:hover {
+  background: #fd285d;
+}
