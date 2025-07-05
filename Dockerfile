@@ -1,6 +1,6 @@
 # Multi-stage build for LANdex
 # Stage 1: Build the React client
-FROM node:18-alpine AS client-builder
+FROM node:22-alpine AS client-builder
 
 # Set working directory for client build
 WORKDIR /app
@@ -20,7 +20,7 @@ COPY client/ ./client/
 RUN npm run --prefix client build
 
 # Stage 2: Production server
-FROM node:18-alpine AS production
+FROM node:22-alpine AS production
 
 # Set working directory
 WORKDIR /app
