@@ -70,5 +70,5 @@ app.use((req, res) => {
 
 // Start the server
 app.listen(PORT, () =>
-  console.log(`LAN Server List running on http://localhost:${PORT}`)
+  console.log(`LAN Server List running on http://0.0.0.0:${PORT}`)
 );
