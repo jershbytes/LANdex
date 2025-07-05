@@ -9,7 +9,6 @@ const PORT = 3000;
 const DATA_PATH = path.join(__dirname, 'servers.json');
 
 app.use(express.json());
-app.use(express.static('public'));
 
 // Ensure servers.json exists
 if (!fs.existsSync(DATA_PATH)) {
@@ -54,6 +53,19 @@ app.delete('/api/servers/:id', isAdmin, (req, res) => {
   }
   writeData(updated);
   res.sendStatus(200); // OK
+});
+
+// Serve static files AFTER API routes
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Serve React app for all remaining routes (SPA fallback)
+app.use((req, res) => {
+  // Only send index.html for GET requests to avoid issues with POST/DELETE
+  if (req.method === 'GET') {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  } else {
+    res.status(404).end();
+  }
 });
 
 // Start the server
