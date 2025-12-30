@@ -10,9 +10,22 @@ const DATA_PATH = path.join(__dirname, 'servers.json');
 
 app.use(express.json());
 
-// Ensure servers.json exists
+// Ensure servers.json exists and is valid
 if (!fs.existsSync(DATA_PATH)) {
   fs.writeFileSync(DATA_PATH, '[]', 'utf8');
+} else {
+  // Validate existing file
+  try {
+    const content = fs.readFileSync(DATA_PATH, 'utf8');
+    if (!content || !content.trim()) {
+      fs.writeFileSync(DATA_PATH, '[]', 'utf8');
+    } else {
+      JSON.parse(content); // Validate JSON
+    }
+  } catch (err) {
+    console.error('Invalid servers.json, reinitializing...', err.message);
+    fs.writeFileSync(DATA_PATH, '[]', 'utf8');
+  }
 }
 
 // Utilities

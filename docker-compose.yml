@@ -1,0 +1,16 @@
+services:
+  landex:
+    image: ghcr.io/jershbytes/landex:main
+    container_name: landex
+    environment:
+      - ADMIN_USERNAME=${ADMIN_USERNAME:-admin}
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD:-password}
+      - NODE_ENV=production
+    ports:
+      - 3000:3000
+    volumes:
+      - landex-data:/app
+    restart: unless-stopped
+
+volumes:
+  landex-data:

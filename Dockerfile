@@ -37,6 +37,9 @@ COPY server.js ./
 COPY server/ ./server/
 COPY servers.json ./
 
+# Initialize servers.json with empty array if it doesn't exist or is empty
+RUN if [ ! -s ./servers.json ]; then echo '[]' > ./servers.json; fi
+
 # Copy built client from previous stage
 COPY --from=client-builder /app/client/dist ./public
 
