@@ -32,6 +32,8 @@
 
 <hr> -->
 
+
+
 <p align="center">
   <a href="#dart-about">About</a> &#xa0; | &#xa0; 
   <a href="#sparkles-features">Features</a> &#xa0; | &#xa0;
@@ -41,6 +43,9 @@
   <a href="#memo-license">License</a> &#xa0; | &#xa0;
   <a href="https://github.com/JershBytes" target="_blank">Author</a>
 </p>
+
+> [!WARNING] 
+> The code in this project was generated using Co-Pilot. This is never meant to hit production and is very much a homelab tool for lan party's.
 
 <br>
 
@@ -71,6 +76,8 @@ Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) an
 
 ## :checkered_flag: Starting ##
 
+### Development
+
 ```bash
 # Clone this project
 $ git clone https://github.com/JershBytes/landex
@@ -86,6 +93,30 @@ $ npm run dev
 
 # The server will initialize in the <http://localhost:5173>
 ```
+
+### Docker Compose
+```bash
+# Clone this project
+$ git clone https://github.com/JershBytes/landex
+
+# Access
+$ cd landex
+
+# Create .env file with your auth credentials
+$ cp .env.example .env
+# Edit .env and set your ADMIN_USERNAME and ADMIN_PASSWORD
+
+# Build and run with Docker Compose
+$ docker compose up -d
+
+# The app will be available on port 3000 (or as configured in docker-compose.yml)
+```
+
+The Docker setup includes:
+- Multi-stage build for optimized image size
+- Named volume for persistent `servers.json` storage
+- Environment variable support for admin credentials
+- Health checks for container monitoring
 
 ## :memo: License ##
 
