@@ -11,7 +11,7 @@ COPY client/package.json ./client/
 COPY server/package.json ./server/
 
 # Install dependencies using npm workspaces
-RUN npm ci --only=production=false
+RUN npm ci
 
 # Copy client source code
 COPY client/ ./client/
